@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body{
+     background-color: aqua;
+     width: 100vw;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.universal{
+     width: 40vw;
+     aspect-ratio: 1;
+     background-color: yellow;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 4%;
+     -webkit-border-radius: 4%;
+     -moz-border-radius: 4%;
+     -ms-border-radius: 4%;
+     -o-border-radius: 4%;
+     animation: sky 2s ease infinite;
+     -webkit-animation: sky 5s ease-in-out infinite;
+}
+
+@keyframes sky {
+     0%{
+          background-color: yellow;
+     }
+     25%{
+          background-color: yellow;
+     }
+     50%{
+          background-color: rgb(0, 0, 0);
+     } 
+     75%{
+          background-color: yellow;
+     }
+     100%{
+          background-color: yellow;
+     }
+}
+ .sun{
+     width: 18vw;
+     aspect-ratio: 1;
+     background-color: red;
+     border-radius: 50%;
+     -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+     -ms-border-radius: 50%;
+     -o-border-radius: 50%;
+     position: relative;
+     overflow: hidden;
+
+
+     &::after{
+          content: "";
+          position: absolute;
+          border-radius: inherit;
+          width: inherit;
+          aspect-ratio: 1;
+          background-color: black;
+          -webkit-border-radius: inherit;
+          -moz-border-radius: inherit;
+          -ms-border-radius: inherit;
+          -o-border-radius: inherit;
+          animation: moonwalk 2s ease-in-out;
+          -webkit-animation: moonwalk 5s ease-in-out infinite;
+}
+}
+
+@keyframes moonwalk {
+     0%{
+          translate: 100%;
+          scale: 1;
+     }
+     50%{
+          translate: 0%;
+          scale: 0.9;
+     }
+     100%{
+
+          translate: -100%;
+          scale: 1;
+     }
+}
+
+
+    </style>
+  </head>
+  <body>
+ <div class="universal">
+ <div class="sun"></div>
+</div>
+  </body>
+</html>
